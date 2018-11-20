@@ -1,6 +1,3 @@
-import string
-
-
 def print_squares_of_numbers_to(n):
     for i in range(1, n+1, 1):
         print (i*i)
@@ -45,3 +42,19 @@ def division_is_different(dividend, divisor, cast_type):
 
 division_is_different(10, 5, float)
 division_is_different(10, 3, int)
+
+
+def is_prime(num):
+    if num < 2 or (not num % 2):
+        return 'CONSONANT'
+    for i in range(3, num, 2):
+        if not num % i:
+            return 'CONSONANT. Divisible by {}'.format(i)
+    return "PRIME"
+
+
+# def is_prime_sieve(num):
+#    for i in range(2, num):
+#        if i == False and i%
+
+print is_prime(1223171)
