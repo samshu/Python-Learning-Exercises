@@ -3,10 +3,14 @@ from abc import ABC, abstractmethod
 
 # Class Definitions
 class User:
+
+    total_users = 0
+
     def __init__(self, name, roles, password="changeme"):
         self.name = name
         self.password = password
         self.roles = roles
+        User.total_users += 1
 
     def add_role(self, role):
         self.roles.append(role)
@@ -77,3 +81,4 @@ for user in users:
 print(f"Users in repository: {user_repository.read_all()}")
 user_repository.delete(users[0])
 print(f"Users in repository: {user_repository.read_all()}")
+print(f"A total of {User.total_users} users were created")
